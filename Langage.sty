@@ -1,0 +1,293 @@
+%**********************************
+% Paquet : Langage
+% Auteur : Jean
+% Version : 1.0
+% Date de création : 2013/09/28
+%*********************************
+
+\NeedsTeXFormat{LaTeX2e}[1999/01/01]
+
+\ProvidesPackage{Langage}[2013/09/28]
+
+\ProcessOptions
+
+%======================
+% COULEUR
+%======================
+
+\definecolor{dkyellow}{RGB}{188,181,1}
+\definecolor{dkgreen}{RGB}{15,113,0}
+\definecolor{xmlGray}{RGB}{155,182,167}
+\definecolor{xmlOR}{RGB}{154,145,23}
+\definecolor{xmlPurple}{RGB}{178,86,196}
+\definecolor{jvGreen}{rgb}{0,0.5,0}
+\definecolor{jvBlue}{rgb}{0.13,0.13,1}
+\definecolor{jvRed}{rgb}{0.9,0,0}
+
+%========================
+% COMMANDES PERSONNELLES
+%========================
+
+%++++++++++++++++++++++++
+% Langage Javascript
+%++++++++++++++++++++++++
+
+\lstdefinelanguage{Javascript}{
+	keywords=[3]{var, function, new, if, else, while, null,true, return, for}, % Mot clé du language
+	keywordstyle=[3]\bfseries\color{red}, % Style pour les mots clés
+	keywords=[2]{OpenLayers, Map, Bounds, TileCache, addLayer, zoomToMaxExtent, Control, DragPan, ZoomBox, Panel, addControls, addControl, getCenter, getResolution, calculateBounds, document, getElementsByTagName, length, checked, value, push,Layer}, % d'autre mots clés
+	keywordstyle=[2]\bfseries\color{gray}, % Style pour les autres mots clé
+	string=[b]{'}, % Paramètre pour définir où commence une chaine de caractère
+	stringstyle=\bfseries\color{or},% Style pour les chaines.
+	comment=[l]{//},% Paramètre pour définir le commencement d'un commentaire
+	commentstyle=\bfseries\color{violet},% Style pour les commentaire
+	sensitive=true, % Pour la case
+	showstringspaces=false
+}
+
+%++++++++++++++++++++++++
+% Langage CSS
+%++++++++++++++++++++++++
+
+\lstdefinelanguage{CSS}{
+	ndkeywords={width,nth,child,background-color,box, sizing,radius, border,shadow, height, display, float, text-align, vertical-align, 
+			    padding, margin, position, clear, transition, delay, border-radius,-moz-border-radius,-ms-border-radius,-webkit-border-radius}, % d'autre mots clés
+	ndkeywordstyle=\color{xmlOR},
+	sensitive=true, % Pour la case
+	comment=[l]{//},% Paramètre pour définir le commencement d'un commentaire
+	commentstyle=\color{violet},% Style pour les commentaire
+	keywordsprefix=@,
+	keywordstyle=\color{dkgreen},
+	showstringspaces=false
+}
+	
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+% \begin{JS}
+%
+% Cette environnement permet de faire référence à du code
+% Javascript
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+\lstnewenvironment{JS}{
+	\lstset{
+		upquote=true,% Pour régler le problème des espaces
+		columns=flexible,% Pour régler le positionnement des colonnes
+		basicstyle=\ttfamily,% Style
+		language=Javascript,% Language à utilisé.
+		numbers=left, % Position des nombres - ici à gauche
+		backgroundcolor=\color{white}, % Couleur de fond
+		numberblanklines=false, % Permet de ne pas imprimer les lignes crée par les nombres
+		aboveskip=0.3cm, % Espace au dessus de la référence du code
+		belowskip=0.3cm, % Espace en dessous de la référence du code
+		breaklines=true,
+		tabsize=4, % Tabulation
+		xleftmargin=1.4em % Règle la marge de gauche
+	}
+}{}
+
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+% \begin{php}
+%
+% Cette environnement permet de faire référence à du code
+% php 
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+\lstnewenvironment{php}{
+	\lstset{	
+		language=PHP,
+		frame=L,
+		tabsize=4,
+		upquote=true,
+		columns=flexible,
+		showstringspaces=false,
+		basicstyle=\ttfamily,
+		keywords={class,protected, private,public,static, if, else, require, require_once, new, echo, 
+				  spl_autoload_register, while, or, fopen, fclose, file_exists, die, fgets, feof, return, 
+		          explode, rtrim, current, end, foreach, as, array, method_exists, ucfirst, extends,
+				  namespace, use, implements},
+		rulecolor=\color{black},
+		keywordstyle=\bfseries\color{blue},
+		keywords=[2]{function},
+		keywordstyle=[2]\bfseries\color{dkgreen},
+		stringstyle=\bfseries\color{red},
+		commentstyle=\bfseries\color{gray},
+		emph=[1]{php},
+		emphstyle=[1]\color{black},
+		xleftmargin=0.5em,
+		aboveskip=0.5cm,
+		belowskip=0.5cm,
+		breaklines=true
+	}
+}{}
+
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+% \begin{html}
+%
+% Cette environnement permet de faire référence à du code
+% html 
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+\lstnewenvironment{html}{
+	\lstset{	
+		language=html,
+		frame=L,
+		upquote=true,
+		columns=flexible,
+		tabsize=4,
+		basicstyle=\ttfamily,
+		keywords=[2]{header,footer,nav,section,article,aside,figure,figcaption},
+		keywordstyle=\bfseries\color{blue},
+		keywordstyle=[2]\bfseries\color{blue},
+		stringstyle=\bfseries\color{black},
+		%identifierstyle=\bfseries\color{green},
+		commentstyle=\bfseries\color{gray},
+		emph=[1]{php},
+		emphstyle=[1]\color{black},
+		emph=[2]{if,and,or,else},
+		emphstyle=[2]\bfseries\color{dkyellow},
+		showstringspaces=false,
+		breaklines=true,
+		xleftmargin=0.5em,
+		aboveskip=0.5cm,
+		belowskip=0.5cm
+	}
+}{}
+
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+% \begin{bash}
+%
+% Cette environnement permet de faire référence à du code
+% shell 
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+\lstnewenvironment{bash}{
+	\lstset{	
+		language=bash,
+		upquote=true,% Pour régler le problème des espaces
+		columns=flexible,% Pour régler le positionnement des colonnes
+		keywordstyle=\color{black},
+		tabsize=4,
+		frame=L,
+		showstringspaces=false,
+		breaklines=true,
+		basicstyle=\ttfamily,
+		commentstyle=\color{black},
+		xleftmargin=0.5em,
+		aboveskip=0.5cm,
+		belowskip=0.5cm
+	}
+}{}
+
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+% \begin{sql}
+%
+% Cette environnement permet de faire référence à du code
+% sql 
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+\lstnewenvironment{sql}{
+	\lstset{	
+		language=SQL,
+		upquote=true,
+		columns=flexible,
+		frame=L,
+		tabsize=4,
+		keywords=[2]{USER, IDENTIFIED, RENAME, TO, PASSWORD, FOR, WITH, OPTION, PROCEDURE, END, BEGIN, DELIMITER, CALL, INTEGER},
+		basicstyle=\bfseries\ttfamily,
+		keywordstyle=\bfseries\color{blue},
+		keywordstyle=[2]\bfseries\color{blue},
+		commentstyle=\bfseries\color{gray},
+		xleftmargin=0.5em,
+		aboveskip=0.3cm,
+		belowskip=0.3cm,
+		showstringspaces=false,
+		breaklines=true
+	}
+}{}
+
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+% \begin{xml}
+%
+% Cette environnement permet de faire référence à du code
+% xml 
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+\lstnewenvironment{xml}{
+	\lstset{	
+		language=XML,
+		upquote=true,
+		columns=flexible,
+		frame=L,
+		tabsize=4,
+		basicstyle=\bfseries\ttfamily,
+		% Chaîne de caractère entre les "
+		morestring=[b]",
+		stringstyle=\color{blue},
+		% Attribut
+		identifierstyle=\color{xmlOR},
+		% Balise
+		moredelim=[s][\color{xmlPurple}]{<}{\ },
+		% Entête XML
+		morecomment=[s]{<?}{?>},
+		commentstyle=\bfseries\color{xmlGray},
+		xleftmargin=0.5em,
+		aboveskip=0.3cm,
+		belowskip=0.3cm,
+		showstringspaces=false,
+		breaklines=true
+	}
+}{}
+
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+% \begin{css}
+%
+% Cette environnement permet de faire référence à du code
+% css 
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+\lstnewenvironment{css}{
+	\lstset{	
+		language=css,
+		upquote=true,
+		columns=flexible,
+		alsoletter={-},
+		frame=L,
+		tabsize=4,
+		basicstyle=\ttfamily,
+		xleftmargin=0.5em,
+		aboveskip=0.3cm,
+		belowskip=0.3cm,
+		breaklines=true
+	}
+}{}
+
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+% \begin{css}
+%
+% Cette environnement permet de faire référence à du code
+% css 
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+\lstnewenvironment{java}{
+	\lstset{	
+		language=Java,
+		upquote=true,
+		columns=flexible,
+		frame=L,
+		tabsize=4,
+		basicstyle=\ttfamily,
+		commentstyle=\color{jvGreen},
+		keywordstyle=\color{jvBlue},
+		stringstyle=\color{jvRed},
+		showstringspaces=false,
+		xleftmargin=0.5em,
+		aboveskip=0.3cm,
+		belowskip=0.3cm,
+		breaklines=true
+	}
+}{}
+
+
+
+\endinput
+
