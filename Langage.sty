@@ -21,8 +21,8 @@
 \definecolor{xmlOR}{RGB}{154,145,23}
 \definecolor{xmlPurple}{RGB}{178,86,196}
 \definecolor{jvGreen}{rgb}{0,0.5,0}
-\definecolor{jvBlue}{rgb}{0.13,0.13,1}
-\definecolor{jvRed}{rgb}{0.9,0,0}
+\definecolor{jvBlue}{rgb}{0.13,0.13,1} % For java but use in python
+\definecolor{jvRed}{rgb}{0.9,0,0} % For java but use in python
 
 %========================
 % COMMANDES PERSONNELLES
@@ -262,10 +262,10 @@
 }{}
 
 %+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-% \begin{css}
+% \begin{java}
 %
 % Cette environnement permet de faire référence à du code
-% css 
+% java 
 %+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 \lstnewenvironment{java}{
@@ -287,7 +287,34 @@
 	}
 }{}
 
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+% \begin{python}
+%
+% Cette environnement permet de faire référence à du code
+% python 
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+\lstnewenvironment{python}{
+	\lstset{	
+		language=Python,
+		upquote=true,
+		columns=flexible,
+		frame=L,
+		tabsize=4,
+		basicstyle=\ttfamily,
+		keywords=[2]{self},
+		commentstyle=\color{jvGreen},
+		keywordstyle=\color{jvBlue},
+		keywordstyle=[2]\color{olive},
+		stringstyle=\color{jvRed},
+		moredelim=[s][\color{jvBlue}]{__}{__},
+		showstringspaces=false,
+		xleftmargin=0.5em,
+		aboveskip=0.3cm,
+		belowskip=0.3cm,
+		breaklines=true
+	}
+}{}
 
 \endinput
 
