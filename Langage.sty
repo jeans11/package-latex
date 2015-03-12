@@ -23,6 +23,8 @@
 \definecolor{jvGreen}{rgb}{0,0.5,0}
 \definecolor{jvBlue}{rgb}{0.13,0.13,1} % For java but use in python
 \definecolor{jvRed}{rgb}{0.9,0,0} % For java but use in python
+\definecolor{jsonDelim}{RGB}{20,105,176}
+\definecolor{jsonPunct}{RGB}{219, 105, 105}
 
 %========================
 % COMMANDES PERSONNELLES
@@ -44,6 +46,20 @@
 	sensitive=true, % Pour la case
 	showstringspaces=false
 }
+
+%++++++++++++++++++++++++
+% Display JSON
+%++++++++++++++++++++++++
+
+\lstdefinelanguage{JSON}{
+	literate=
+		{:}{{{\color{jsonPunct}{:}}}}{1}
+		{\{}{{{\color{jsonDelim}{\{}}}}{1}
+		{\}}{{{\color{jsonDelim}{\}}}}}{1}
+		{[}{{{\color{jsonDelim}{[}}}}{1}
+		{]}{{{\color{jsonDelim}{]}}}}{1},
+}
+	
 
 %++++++++++++++++++++++++
 % Langage CSS
@@ -82,6 +98,35 @@
 		breaklines=true,
 		tabsize=4, % Tabulation
 		xleftmargin=1.4em % Règle la marge de gauche
+	}
+}{}
+
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+% \begin{json}
+%
+% Cette environnement permet de faire référence à du code
+% json
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+\lstnewenvironment{json}[1][]{
+	\lstset{
+		language=JSON,
+		caption=#1,
+		captionpos=b,
+		abovecaptionskip=0.5cm,
+		upquote=true,
+		columns=flexible,
+		frame=L,
+		tabsize=2,
+		basicstyle=\ttfamily,
+		%commentstyle=\color{jvGreen},
+		%keywordstyle=\color{jvBlue},
+		%stringstyle=\color{jvRed},
+		showstringspaces=false,
+		xleftmargin=0.5em,
+		aboveskip=0.3cm,
+		belowskip=0.3cm,
+		breaklines=true
 	}
 }{}
 
