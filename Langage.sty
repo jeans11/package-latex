@@ -35,12 +35,14 @@
 %++++++++++++++++++++++++
 
 \lstdefinelanguage{Javascript}{
-	keywords=[3]{var, function, new, if, else, while, null,true, return, for}, % Mot clé du language
-	keywordstyle=[3]\bfseries\color{red}, % Style pour les mots clés
-	keywords=[2]{OpenLayers, Map, Bounds, TileCache, addLayer, zoomToMaxExtent, Control, DragPan, ZoomBox, Panel, addControls, addControl, getCenter, getResolution, calculateBounds, document, getElementsByTagName, length, checked, value, push,Layer}, % d'autre mots clés
+	keywords=[4]{exports, module, require, define}, % Mot clé du language
+	keywords=[3]{var, function, new, if, else, while, null,true, return, for, this}, % Mot clé du language
+	keywordstyle=[4]\bfseries\color{xmlOR}, % Style pour les mots clés
+	keywordstyle=[3]\bfseries\color{jvBlue}, % Style pour les mots clés
+	keywords=[2]{OpenLayers, Map, Bounds, TileCache, addLayer, zoomToMaxExtent, Control, DragPan, ZoomBox, Panel, addControls, addControl, getCenter, getResolution, calculateBounds, document, getElementsByTagName, length, checked, push,Layer}, % d'autre mots clés
 	keywordstyle=[2]\bfseries\color{gray}, % Style pour les autres mots clé
 	string=[b]{'}, % Paramètre pour définir où commence une chaine de caractère
-	stringstyle=\bfseries\color{or},% Style pour les chaines.
+	stringstyle=\bfseries\color{jvRed},% Style pour les chaines.
 	comment=[l]{//},% Paramètre pour définir le commencement d'un commentaire
 	commentstyle=\bfseries\color{violet},% Style pour les commentaire
 	sensitive=true, % Pour la case
@@ -84,20 +86,24 @@
 % Javascript
 %+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-\lstnewenvironment{JS}{
+\lstnewenvironment{JS}[1][]{
 	\lstset{
-		upquote=true,% Pour régler le problème des espaces
-		columns=flexible,% Pour régler le positionnement des colonnes
-		basicstyle=\ttfamily,% Style
-		language=Javascript,% Language à utilisé.
-		numbers=left, % Position des nombres - ici à gauche
-		backgroundcolor=\color{white}, % Couleur de fond
-		numberblanklines=false, % Permet de ne pas imprimer les lignes crée par les nombres
-		aboveskip=0.3cm, % Espace au dessus de la référence du code
-		belowskip=0.3cm, % Espace en dessous de la référence du code
+		language=Javascript,
+		caption=#1,
+		captionpos=b,
+		belowcaptionskip=0.5cm,
+		abovecaptionskip=0.5cm,
+		upquote=true,
+		columns=flexible,
+		frame=L,
+		tabsize=2,
+		basicstyle=\ttfamily,
+		commentstyle=\color{jvGreen},
+		showstringspaces=false,
+		xleftmargin=0.5em,
+		aboveskip=0.3cm,
+		belowskip=0.3cm,
 		breaklines=true,
-		tabsize=4, % Tabulation
-		xleftmargin=1.4em % Règle la marge de gauche
 	}
 }{}
 
