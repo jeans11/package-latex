@@ -143,11 +143,15 @@
 % php 
 %+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-\lstnewenvironment{php}{
+\lstnewenvironment{php}[1][]{
 	\lstset{	
 		language=PHP,
 		frame=L,
 		tabsize=4,
+		caption=#1,
+		captionpos=b,
+		belowcaptionskip=0.5cm,
+		abovecaptionskip=0.5cm,
 		upquote=true,
 		columns=flexible,
 		showstringspaces=false,
@@ -178,12 +182,16 @@
 % html 
 %+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-\lstnewenvironment{html}{
+\lstnewenvironment{html}[1][]{
 	\lstset{	
 		language=html,
 		frame=L,
 		upquote=true,
 		columns=flexible,
+		caption=#1,
+		captionpos=b,
+		belowcaptionskip=0.5cm,
+		abovecaptionskip=0.5cm,
 		tabsize=4,
 		basicstyle=\ttfamily,
 		keywords=[2]{header,footer,nav,section,article,aside,figure,figcaption},
@@ -236,11 +244,15 @@
 % sql 
 %+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-\lstnewenvironment{sql}{
+\lstnewenvironment{sql}[1][]{
 	\lstset{	
 		language=SQL,
 		upquote=true,
 		columns=flexible,
+		caption=#1,
+		captionpos=b,
+		belowcaptionskip=0.5cm,
+		abovecaptionskip=0.5cm,
 		frame=L,
 		tabsize=4,
 		keywords=[2]{USER, IDENTIFIED, RENAME, TO, PASSWORD, FOR, WITH, OPTION, PROCEDURE, END, BEGIN, DELIMITER, CALL, INTEGER},
@@ -300,9 +312,13 @@
 % css 
 %+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-\lstnewenvironment{css}{
+\lstnewenvironment{css}[1][]{
 	\lstset{	
 		language=css,
+		caption=#1,
+		captionpos=b,
+		belowcaptionskip=0.5cm,
+		abovecaptionskip=0.5cm,
 		upquote=true,
 		columns=flexible,
 		alsoletter={-},
@@ -353,11 +369,15 @@
 % python 
 %+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-\lstnewenvironment{python}{
+\lstnewenvironment{python}[1][]{
 	\lstset{	
 		language=Python,
 		upquote=true,
 		columns=flexible,
+		caption=#1,
+		captionpos=b,
+		belowcaptionskip=0.5cm,
+		abovecaptionskip=0.5cm,
 		frame=L,
 		tabsize=4,
 		basicstyle=\ttfamily,
