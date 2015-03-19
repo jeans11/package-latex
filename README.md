@@ -50,7 +50,7 @@ SQL        | sql
 
 ```Latex
 \begin{img}
-  \incldegraphics{path/image}
+  \includegraphics{path/image}
   \caption{Votre légende}
 \end{img}
 ```
